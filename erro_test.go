@@ -6,7 +6,9 @@ import (
 )
 
 func TestNewError(t *testing.T) {
-	  err := NewError("hello")
-	  fmt.Println(err)
+	type T struct {
+		Name string `json:"name"`
+	}
+	err := NewError("hello", T{Name: "hi"})
+	fmt.Println(err)
 }
-
