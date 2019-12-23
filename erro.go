@@ -40,10 +40,8 @@ func getStackInfo() string {
 	}
 	// 生成堆栈报错信息
 	var stackInfo string
-	e := stackList.Front()
-	for i := 0; i < stackList.Len(); i++ {
+	for e := stackList.Front(); e != nil; e = e.Next() {
 		stackInfo += e.Value.(string)
-		e = e.Next()
 	}
 	return stackInfo
 }
