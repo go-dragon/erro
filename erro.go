@@ -8,16 +8,14 @@ import (
 )
 
 type Error struct {
-	Data      interface{} `json:"data"`
-	Msg       string `json:"msg"`
-	StackInfo string `json:"stack_info"`
+	Info      interface{} `json:"info"`
+	StackInfo string      `json:"stack_info"`
 }
 
 // new一个error
-func NewError(info string, data interface{}) *Error {
+func NewError(info interface{}) *Error {
 	return &Error{
-		Data:      data,
-		Msg:       info,
+		Info:      info,
 		StackInfo: getStackInfo(),
 	}
 }

@@ -9,6 +9,6 @@ func TestNewError(t *testing.T) {
 	type T struct {
 		Name string `json:"name"`
 	}
-	err := NewError("hello", T{Name: "hi"})
+	err := NewError(T{Name: "hi"})
 	fmt.Println(err)
 }
