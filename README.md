@@ -1,2 +1,2 @@
 # erro
-erro is an error stack tool
+erro is an error wrapper to wrap the error stack
