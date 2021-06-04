@@ -12,12 +12,17 @@ type Error struct {
 	StackInfo string      `json:"stack_info"`
 }
 
-// new一个error
-func NewError(info interface{}) *Error {
+// NewError new stack error
+func NewError(info interface{}) error {
 	return &Error{
 		Info:      info,
 		StackInfo: getStackInfo(),
 	}
+}
+
+func (err *Error) Error() string {
+	content, _ := json.Marshal(err)
+	return string(content)
 }
 
 // string err
